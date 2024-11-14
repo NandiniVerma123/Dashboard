@@ -46,7 +46,7 @@ const DropdownNotification = () => {
           >
             <div className="px-4.5 py-3">
               <h5 className="text-sm font-medium text-bodydark2">
-                Notification
+                Notifications
               </h5>
             </div>
 
@@ -58,10 +58,9 @@ const DropdownNotification = () => {
                 >
                   <p className="text-sm">
                     <span className="text-black dark:text-white">
-                      Edit your information in a swipe
+                      Account Updated
                     </span>{' '}
-                    Sint occaecat cupidatat non proident, sunt in culpa qui
-                    officia deserunt mollit anim.
+                    Your account information has been successfully updated.
                   </p>
 
                   <p className="text-xs">12 May, 2025</p>
@@ -74,9 +73,9 @@ const DropdownNotification = () => {
                 >
                   <p className="text-sm">
                     <span className="text-black dark:text-white">
-                      It is a long established fact
+                      New Feature Released
                     </span>{' '}
-                    that a reader will be distracted by the readable.
+                    We just launched a new feature for improved performance.
                   </p>
 
                   <p className="text-xs">24 Feb, 2025</p>
@@ -89,10 +88,9 @@ const DropdownNotification = () => {
                 >
                   <p className="text-sm">
                     <span className="text-black dark:text-white">
-                      There are many variations
+                      Scheduled Maintenance
                     </span>{' '}
-                    of passages of Lorem Ipsum available, but the majority have
-                    suffered
+                    Our platform will be down for maintenance on this date.
                   </p>
 
                   <p className="text-xs">04 Jan, 2025</p>
@@ -105,10 +103,9 @@ const DropdownNotification = () => {
                 >
                   <p className="text-sm">
                     <span className="text-black dark:text-white">
-                      There are many variations
+                      Security Update
                     </span>{' '}
-                    of passages of Lorem Ipsum available, but the majority have
-                    suffered
+                    We've improved our security measures for better protection.
                   </p>
 
                   <p className="text-xs">01 Dec, 2024</p>

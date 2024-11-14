@@ -6,9 +6,8 @@ const options: ApexOptions = {
   colors: ['#3C50E0', '#80CAEE'],
   chart: {
     fontFamily: 'Satoshi, sans-serif',
-    type: 'bar',
+    type: 'area', 
     height: 335,
-    stacked: true,
     toolbar: {
       show: false,
     },
@@ -16,33 +15,24 @@ const options: ApexOptions = {
       enabled: false,
     },
   },
-
   responsive: [
     {
       breakpoint: 1536,
       options: {
         plotOptions: {
-          bar: {
+          area: {
             borderRadius: 0,
-            columnWidth: '25%',
           },
         },
       },
     },
   ],
-  plotOptions: {
-    bar: {
-      horizontal: false,
-      borderRadius: 0,
-      columnWidth: '25%',
-      borderRadiusApplication: 'end',
-      borderRadiusWhenStacked: 'last',
-    },
-  },
   dataLabels: {
     enabled: false,
   },
-
+  stroke: {
+    curve: 'smooth', 
+  },
   xaxis: {
     categories: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
   },
@@ -52,13 +42,17 @@ const options: ApexOptions = {
     fontFamily: 'Satoshi',
     fontWeight: 500,
     fontSize: '14px',
-
     markers: {
       radius: 99,
     },
   },
   fill: {
-    opacity: 1,
+    type: 'gradient', 
+    gradient: {
+      shadeIntensity: 1,
+      opacityFrom: 0.4,
+      opacityTo: 0,
+    },
   },
 };
 
@@ -70,7 +64,7 @@ interface ChartTwoState {
 }
 
 const ChartTwo: React.FC = () => {
-  const [state, setState] = useState<ChartTwoState>({
+  const [state] = useState<ChartTwoState>({
     series: [
       {
         name: 'Sales',
@@ -82,13 +76,6 @@ const ChartTwo: React.FC = () => {
       },
     ],
   });
-  
-  const handleReset = () => {
-    setState((prevState) => ({
-      ...prevState,
-    }));
-  };
-  handleReset;  
 
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
@@ -137,7 +124,7 @@ const ChartTwo: React.FC = () => {
           <ReactApexChart
             options={options}
             series={state.series}
-            type="bar"
+            type="area"
             height={350}
           />
         </div>

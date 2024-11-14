@@ -12,21 +12,34 @@ const MapOne = () => {
 
       regionStyle: {
         initial: {
-          fill: '#C8D0D8',
+          fill: '#A6E3E9', 
+          stroke: '#3B82F6', 
+          "stroke-width": 1,
+          fillOpacity: 0.9,
         },
         hover: {
           fillOpacity: 1,
-          fill: '#3056D3',
+          fill: '#FF5733',
+        },
+        selected: {
+          fill: '#FFD700', 
+        },
+        selectedHover: {
+          fill: '#FFAA00', 
         },
       },
+      
       regionLabelStyle: {
         initial: {
-          fontFamily: 'Satoshi',
-          fontWeight: 'semibold',
-          fill: '#fff',
+          fontFamily: 'Arial, sans-serif',
+          fontSize: '12px',
+          fontWeight: 'bold',
+          fill: '#2F4F4F', 
         },
         hover: {
           cursor: 'pointer',
+          fontSize: '13px',
+          fill: '#FFFFFF',
         },
       },
 
@@ -38,13 +51,16 @@ const MapOne = () => {
         },
       },
     });
-    mapOne;
-  });
+
+    return () => {
+      mapOne && mapOne.destroy(); 
+    };
+  }, []);
 
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
       <h4 className="mb-2 text-xl font-semibold text-black dark:text-white">
-        Region labels
+       World Map
       </h4>
       <div id="mapOne" className="mapOne map-btn h-90"></div>
     </div>
